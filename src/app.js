@@ -5,6 +5,7 @@ const hbs = require('hbs')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT||3002
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
@@ -94,6 +95,6 @@ app.get('*', (req, res)=>{
     })
 })
 
-app.listen(3002, ()=>{
-    console.log('Server Started on port number 3002')
+app.listen(port, ()=>{
+    console.log('Server Started on port number '+port)
 })
