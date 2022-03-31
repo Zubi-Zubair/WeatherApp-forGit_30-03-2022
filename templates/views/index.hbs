@@ -13,21 +13,40 @@
 <body>
     <div class="main-content">
 
-        <div class="inner-container">
+        {{!-- <div class="inner-container"> --}}
 
         {{>header}}
 
-        <p>Weather Forecast Site</p>
+        {{!-- <p>Weather Forecast Site</p> --}}
 
         <form>
-            <input placeholder="Location" />
-            <button>Search</button>
+            <div class="inner-container"></div>
+
+                <input placeholder="Location" />
+                <button>Search</button>
+
+                {{!-- <p id="oneline">
+                    <img id="myimg">
+                        <span id="message-2"></span>
+                    <img id="myimg2">
+                </p> --}}
+
+                <p id="message-1"></p>
+                <div class="oneline">
+                    <img id="myimg">
+                </div>                
+
+                <p id="message-2"></p>
+            </div>
         </form>
 
-        <p id="message-1"></p>
-        <p id="message-2"></p>
-
-    </div>
+        {{!-- <p id="message-1"></p>
+        <p id="oneline">
+            <span id="myimg"></span>
+                <span id="message-2"></span>
+            <span id="myimg"></span>
+        </p>
+    </div> --}}
     </div>
 
     {{>footer}}

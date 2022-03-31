@@ -6,6 +6,10 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
+const showimg = document.querySelector('#myimg')
+
+let path
+
 
 weatherForm.addEventListener('submit', (e)=>{
     e.preventDefault()
@@ -23,8 +27,12 @@ weatherForm.addEventListener('submit', (e)=>{
                 messageOne.textContent = data.error
             } else {
                 console.log(data)
-                messageOne.textContent = data.forecast.current.temperature
-                messageTwo.textContent = data.forecast.location.name
+                messageOne.textContent = data.forecast.location.name
+                messageTwo.textContent = data.forecast.current.temperature
+                // weatherIcon = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`
+                path = data.forecast.current.weather_icons[0]
+                showimg.setAttribute('src', path)
+                console.log(path)
                 // messageTwo.textContent = data.current.temperature
                 // messageOne.textContent = data.location
                 // messageTwo.textContent = data.forecast
